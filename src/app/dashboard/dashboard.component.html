@@ -1,0 +1,31 @@
+
+   <nav class="navbar navbar-expand-lg navbar-dark bg-danger nav-border">
+    <a class="navbar-brand nav-brand title-1" href="#"><i class="fas fa-drumstick-bite animated pulse infinite icon"></i>  <span class="title">Foody</span></a>
+     </nav>
+<div >
+
+  <mat-spinner class="position" *ngIf="photos== undefined"></mat-spinner>
+</div>
+
+<div class="container" style="padding-top:69px;">
+
+  <mat-grid-list style="margin-bottom:30px;" gutterSize='30px' cols={{columns}} rowHeight="2:1">
+   <mat-grid-tile  *ngFor="let current of photos | paginate: { itemsPerPage: 9, currentPage: page }">
+   <mat-grid-tile-header *ngIf ="reviewData && current.id==snapId">
+     star : {{reviewData.star}} &nbsp;
+     reviewer : {{reviewData.Name}} &nbsp;
+     comment : {{reviewData.description}} &nbsp;
+   </mat-grid-tile-header>
+      <img (click)="review(current.id)" src="https://farm{{current.farm}}.staticflickr.com/{{current.server}}/{{current.id}}_{{current.secret}}.jpg" alt="{{current.title}}">
+   <mat-grid-tile-footer> {{current.title}} </mat-grid-tile-footer>
+     </mat-grid-tile>
+ </mat-grid-list>
+</div>
+<br>
+
+<div *ngIf="photos" class="text-center bg-danger text-white " style="padding:20px;">
+ <pagination-controls  (pageChange)="page = $event"></pagination-controls>
+ 
+</div>
+
+

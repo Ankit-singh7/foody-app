@@ -1,0 +1,60 @@
+
+   <nav class="navbar navbar-expand-lg navbar-dark bg-danger nav-border">
+    <a class="navbar-brand nav-brand title-1 " href="#"><i class="fas fa-drumstick-bite animated pulse infinite  icon"></i>  <span class="title">Foody</span></a>
+     </nav>
+
+  
+
+<div class="conatiner text-center" style="padding-top:69px">
+<mat-card class="example-card" >
+    <mat-card-header>
+      <!-- <div mat-card-avatar class="example-header-image"></div> -->
+      <mat-card-title ><span class="title2">{{photo.title}}</span></mat-card-title>
+    
+    </mat-card-header>
+    <img style="max-width:380px;max-height:400px"  src="https://farm{{photo.farm}}.staticflickr.com/{{photo.server}}/{{photo.id}}_{{photo.secret}}.jpg" alt="{{photo.title}}">
+    <mat-card-content>
+      <p>
+        Owner of the Image: {{photo.owner}}
+      </p>
+      <hr>
+      <form [formGroup]="profileForm" class="example-form" (ngSubmit)="onSubmit()">
+       
+        <mat-form-field >
+          <mat-label> Name</mat-label>
+          <input matInput  placeholder="Name" formControlName="Name">
+        </mat-form-field>
+      <br>
+      <br>
+        <label>
+         <span style="color:#7d7d7d;font-weight:bold">Rate us: &nbsp;</span> 
+        <div>
+          <mat-radio-group formControlName="star">
+           1 <mat-radio-button value="1"></mat-radio-button>
+           2 <mat-radio-button value="2"></mat-radio-button>
+           3 <mat-radio-button value="3"></mat-radio-button>
+           4 <mat-radio-button value="4"></mat-radio-button>
+           5 <mat-radio-button value="5"></mat-radio-button>
+           6 <mat-radio-button value="6"></mat-radio-button>
+           7 <mat-radio-button value="7"></mat-radio-button>
+           8 <mat-radio-button value="8"></mat-radio-button>
+           9 <mat-radio-button value="9"></mat-radio-button>
+           10 <mat-radio-button value="10"></mat-radio-button>
+          </mat-radio-group>
+          </div>
+        </label>
+       <br>
+        <mat-form-field class="example-full-width">
+            <textarea matInput formControlName="description" placeholder="Leave a comment"></textarea>
+          </mat-form-field>
+          <br>
+          <button  mat-raised-button color="primary"  type="submit" [disabled]="!profileForm.valid">Review</button>        
+        </form>
+    </mat-card-content>
+    <mat-card-actions>
+      <!-- <button mat-raised-button color="primary" data-toggle="modal" data-target=".bd-example-modal-sm">REVIEW</button> -->
+    </mat-card-actions>
+  </mat-card>
+</div>
+
+  

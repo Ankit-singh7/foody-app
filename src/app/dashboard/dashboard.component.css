@@ -1,0 +1,41 @@
+@import url('https://fonts.googleapis.com/css?family=Baloo+Chettan&subset=latin-ext,vietnamese');
+
+nav{
+    box-shadow: 0 35px 30px rgba(0, 0, 0, 0.3);
+    
+}
+
+.title{
+    font-weight:500;
+    font-family: 'Baloo Chettan', cursive;
+    font-size:40px;
+}
+
+.icon
+{
+    margin-right:10px;
+    font-size:35px
+
+}
+
+
+mat-spinner{
+
+     margin:15vw auto;
+}
+
+mat-grid-tile{
+
+    cursor: pointer;
+    transition: .3s;
+
+}
+
+mat-grid-tile:hover{
+
+    transform:scale(1.3);
+    box-shadow: 0 35px 30px rgba(0, 0, 0, 0.7);
+    border-radius:30px;
+    z-index:2
+
+}
